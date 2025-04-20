@@ -56,16 +56,35 @@ const UpdateTask = () => {
 
     
   return (
-    <div>UpdateTask
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+      <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
+        <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">✏️ Update Task</h2>
         <form onSubmit={submitForm}>
-        <div className='input'>
-                <label htmlFor="fname">First name :</label>
-                <input type="text" onChange={inputHandler} id='task' name='task' autoComplete='off' placeholder='first name'/>
-            </div>
-            <div>
-                <button >submit</button>
-            </div>
+          <div className="mb-4">
+            <label htmlFor="task" className="block text-sm font-medium text-gray-700 mb-2">
+              Task Name:
+            </label>
+            <input
+              type="text"
+              onChange={inputHandler}
+              value={task.task}
+              id="task"
+              name="task"
+              autoComplete="off"
+              placeholder="Update your task..."
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <div className="text-center">
+            <button
+              type="submit"
+              className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
+            >
+              ✅ Submit
+            </button>
+          </div>
         </form>
+      </div>
     </div>
   )
 }
